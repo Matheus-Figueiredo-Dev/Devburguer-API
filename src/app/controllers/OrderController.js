@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import Order from '../schemas/Order';
 import Product from '../models/Product';
 import Category from '../models/Category';
+import User from '../models/User';
 
 class OrderController {
 	async store(req, res) {
@@ -86,16 +87,22 @@ class OrderController {
 			return res.status(400).json({ error: err.errors });
 		}
 
-        const { id } = req.params;
-        const { status } = req.body;
+		const { admin: isAdmin } = await User.findByPk(req.userId);
 
-        try {
-            await Order.updateOne({ _id: id }, { status });
-        } catch (err) {
-            return res.status(400).json({ error: err.message });
-        }
+		if (!isAdmin) {
+			return res.status(401).json();
+		}
 
-        return res.json({ message: 'Order updated successfully!' });
+		const { id } = req.params;
+		const { status } = req.body;
+
+		try {
+			await Order.updateOne({ _id: id }, { status });
+		} catch (err) {
+			return res.status(400).json({ error: err.message });
+		}
+
+		return res.json({ message: 'Order updated successfully!' });
 	}
 }
 

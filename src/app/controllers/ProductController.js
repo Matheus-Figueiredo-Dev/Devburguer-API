@@ -1,6 +1,8 @@
 import * as Yup from 'yup';
+
 import Product from '../models/Product';
 import Category from '../models/Category';
+import User from '../models/User';
 
 class ProductController {
 	async store(req, res) {
@@ -16,6 +18,12 @@ class ProductController {
 			return res.status(400).json({ error: err.errors });
 		}
 
+		const { admin: isAdmin } = await User.findByPk(req.userId);
+
+		if (!isAdmin) {
+			return res.status(401).json();
+		}
+
 		const { filename: path } = req.file;
 		const { name, price, category_id } = req.body;
 
@@ -24,7 +32,7 @@ class ProductController {
 			price,
 			category_id,
 			path,
-		})
+		});
 
 		return res.status(201).json(product);
 	}
@@ -36,8 +44,8 @@ class ProductController {
 					model: Category,
 					as: 'category',
 					attributes: ['id', 'name'],
-				}
-			]
+				},
+			],
 		});
 
 		return res.json(products);
