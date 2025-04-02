@@ -44,7 +44,7 @@ Git
 
 Clone o repositório:
 
-git clone https://github.com/seuusuario/devburger-api.git
+git clone https://github.com/MatheusFigueiredo1001/devburger-api.git
 
 Acesse a pasta do projeto:
 
@@ -56,7 +56,7 @@ npm install
 
 Configure as variáveis de ambiente no arquivo .env:
 
-PORT=5000
+PORT=3000
 DATABASE_URL=mongodb+srv://seuusuario:suasenha@cluster.mongodb.net/devburger
 JWT_SECRET=sua-chave-secreta
 STRIPE_SECRET=sua-chave-stripe
