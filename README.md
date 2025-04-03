@@ -1,6 +1,6 @@
 🍔 DevBurger - API
 
-Esta é a API do DevBurger, responsável pelo gerenciamento de usuários, produtos, pedidos e autenticação. Construída com Node.js e Express, e conectada ao banco de dados MongoDB com Prisma ORM.
+Esta é a API do DevBurger, responsável pelo gerenciamento de usuários, produtos, pedidos e autenticação. Construída com Node.js e Express, e conectada ao banco de dados Postgres e MongoDB.
 
 🚀 Funcionalidades
 
