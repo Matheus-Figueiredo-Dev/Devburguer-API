@@ -1,70 +1,99 @@
-🍔 DevBurger - API
+🍔 DevBurguer - Back-End
+Este é o back-end do projeto DevBurguer, uma aplicação completa que simula o funcionamento real de uma hamburgueria. O sistema foi dividido em duas partes — back-end e front-end — com foco total em criar uma estrutura robusta, segura e escalável para gerenciar usuários, produtos, categorias, pedidos e transações financeiras.
 
-Esta é a API do DevBurger, responsável pelo gerenciamento de usuários, produtos, pedidos e autenticação. Construída com Node.js e Express, e conectada ao banco de dados Postgres e MongoDB.
+🧠 Objetivo
+Desenvolver a estrutura completa de um sistema de pedidos de uma hamburgueria com autenticação, banco de dados relacional e não-relacional, validação de dados, upload de arquivos e integração com sistema de pagamento.
 
-🚀 Funcionalidades
+🚀 Tecnologias Utilizadas
+- Node.js (JavaScript);
+- Express;
 
-👉 Cadastro e login de usuários com autenticação JWT👉 CRUD de produtos (adicionar, editar e deletar)👉 Gerenciamento de pedidos e alteração de status👉 Integração com Stripe para pagamentos
+- PostgreSQL – banco relacional para:
+.Usuários;
+.Produtos;
+.Categorias;
+.Transações;
 
-🛠️ Tecnologias
+- MongoDB – banco não relacional para:
+.Pedidos;
 
-Node.js
+- Yup – validação de dados
+- JWT (JSON Web Token) – autenticação e segurança;
+- Multer – upload de imagens de produtos;
+- Stripe – integração para pagamento (modo teste);
+- Dotenv – variáveis de ambiente;
+- Bcrypt – criptografia de senhas;
+- Arquitetura MVC – Controllers, Models, Schemas e Rotas organizadas;
 
-Express
+📁 Estrutura do Projeto
+pgsql
+Copiar
+Editar
+📦 devburguer-backend
+ ┣ 📂controllers
+ ┣ 📂models
+ ┣ 📂schemas
+ ┣ 📂routes
+ ┣ 📂middlewares
+ ┣ 📂uploads
+ ┣ 📄server.js
+ ┣ 📄.env
+ ┣ 📄package.json
+ 
+🔒 Segurança
+JWT para autenticação de rotas protegidas;
+Criptografia de senhas com Bcrypt;
+Validação de entrada de dados com Yup;
 
-MongoDB
+💸 Integração com Stripe
+Integração com a API da Stripe para simulação de pagamento;
+Testes com chave pública e secreta de ambiente;
 
-Prisma ORM
+📌 Funcionalidades
+Cadastro e login de usuários;
+Cadastro de produtos e categorias;
+Upload de imagens para produtos com Multer;
+Listagem e edição de produtos;
+Criação e gerenciamento de pedidos no MongoDB;
+Pagamento simulado via Stripe;
+Rotas organizadas e separadas por responsabilidades (MVC);
 
-JWT (JSON Web Token)
+🧠 Aprendizados
+Integração entre dois bancos de dados (PostgreSQL e MongoDB);
+Boas práticas de organização de código com a arquitetura MVC;
+Segurança e autenticação robusta com JWT;
+Validação eficiente com Yup;
+Criação de endpoints RESTful seguindo padrões profissionais;
+Deploy e escalabilidade de um sistema real;
 
-Stripe API
-
-CORS
-
-Bcrypt.js
-
-Dotenv
-
-Multer
-
-📦 Como rodar o projeto
-
-🛢️ Pré-requisitos
-
-Antes de começar, tenha instalado:
-
-Node.js
-
-MongoDB
-
-Git
-
-🛢️ Instalação
-
+⚙️ Como rodar o projeto
 Clone o repositório:
 
-git clone https://github.com/MatheusFigueiredo1001/devburger-api.git
-
-Acesse a pasta do projeto:
-
-cd devburger-api
-
+bash
+Copiar
+Editar
+git clone https://github.com/Matheus-Figueiredo-Dev/Devburguer-API.git
 Instale as dependências:
 
-npm install
+bash
+Copiar
+Editar
+yarn
+Configure as variáveis de ambiente no .env:
 
-Configure as variáveis de ambiente no arquivo .env:
-
+env
+Copiar
+Editar
 PORT=3000
-DATABASE_URL=mongodb+srv://seuusuario:suasenha@cluster.mongodb.net/devburger
-JWT_SECRET=sua-chave-secreta
-STRIPE_SECRET=sua-chave-stripe
+DATABASE_URL=postgres://user:password@localhost:5432/devburguer
+MONGO_URL=mongodb://localhost:27017/devburguer
+JWT_SECRET=sua_chave_secreta
+STRIPE_SECRET_KEY=sua_chave_stripe
+Inicie o servidor:
 
-🛢️ Executando o projeto
-
-Para rodar a API localmente, use:
-
-npm start
-
-A API estará rodando em http://localhost:3000 🚀
+bash
+Copiar
+Editar
+yarn
+📍 Status
+✅ Projeto em constante evolução. Parte back-end finalizada com todas as funcionalidades principais de uma hamburgueria moderna.
