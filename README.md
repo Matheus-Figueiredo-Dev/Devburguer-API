@@ -12,10 +12,14 @@ Desenvolver a estrutura completa de um sistema de pedidos de uma hamburgueria co
 .Usuários;
 .Produtos;
 .Categorias;
-.Transações;
+
+![image](https://github.com/user-attachments/assets/483626be-55b9-4838-864d-689927cda724)
+
 
 - MongoDB – banco não relacional para:
 .Pedidos;
+
+![image](https://github.com/user-attachments/assets/3ca920b4-a8a6-45d7-be36-f3a7f12e4dc0)
 
 - Yup – validação de dados
 - JWT (JSON Web Token) – autenticação e segurança;
