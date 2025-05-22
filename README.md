@@ -70,34 +70,29 @@ Validação eficiente com Yup;
 Criação de endpoints RESTful seguindo padrões profissionais;
 Deploy e escalabilidade de um sistema real;
 
+📍 Status
+✅ Projeto em constante evolução. Parte back-end finalizada com todas as funcionalidades principais de uma hamburgueria moderna.
+
 ⚙️ Como rodar o projeto
-Clone o repositório:
+1. **Clone o repositório**:
 
-bash
-Copiar
-Editar
-git clone https://github.com/Matheus-Figueiredo-Dev/Devburguer-API.git
-Instale as dependências:
+```bash
+git clone https://github.com/Matheus-Figueiredo-Dev/Devburguer-api.git
+cd Devburguer-api
 
-bash
-Copiar
-Editar
+2. **Instale as dependências**:
 yarn
-Configure as variáveis de ambiente no .env:
 
-env
-Copiar
-Editar
+3. **Configure as variáveis de ambiente**:
+Crie um arquivo .env na raiz do projeto e adicione as variáveis necessárias:
+
 PORT=3000
 DATABASE_URL=postgres://user:password@localhost:5432/devburguer
 MONGO_URL=mongodb://localhost:27017/devburguer
 JWT_SECRET=sua_chave_secreta
 STRIPE_SECRET_KEY=sua_chave_stripe
-Inicie o servidor:
 
-bash
-Copiar
-Editar
-yarn
-📍 Status
-✅ Projeto em constante evolução. Parte back-end finalizada com todas as funcionalidades principais de uma hamburgueria moderna.
+Substitua user, password, e as chaves pelas suas credenciais reais.
+
+4. **Inicie a aplicação**:
+yarn dev
